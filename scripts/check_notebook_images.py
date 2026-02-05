@@ -4,7 +4,10 @@ import sys
 from pathlib import Path
 
 # Regexes to catch common image references
-MARKDOWN_IMG_RE = re.compile(r'!\[.*?\]\((.*?)\)')
+MARKDOWN_IMG_RE = re.compile(
+    r'!\[.*?\]\(\s*([^\s")]+)'
+)
+
 PY_IMG_RE = re.compile(
     r'(?:Image\s*\(\s*filename\s*=\s*|imread\s*\(|open\s*\()\s*[\'"]([^\'"]+)[\'"]'
 )
